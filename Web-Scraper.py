@@ -45,4 +45,5 @@ for url in urls:
 with open('athletic_department_information.csv', 'w') as csv_file:
     csv_writer = csv.writer(csv_file)
     for name, position, email in zip(name_lst, position_lst, email_lst):
-        csv_writer.writerow([name, position, email])
+        if 'Communication' in position:
+            csv_writer.writerow([name, position, email])
